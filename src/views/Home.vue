@@ -1,18 +1,36 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    this is home,{{msg}}
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+
+  },
+  data () {
+    return {
+      msg: 'hello world',
+      arr: []
+    }
+  },
+  mounted () {
+    // fetch('https://jsonplaceholder.typicode.com/posts')
+    //   .then(response => response.json())
+    //   .then(res => {
+    //     this.arr = res
+    //   })
+    const url = '/x/web-interface/web/channel/category/list'
+    fetch(url)
+      .then(response => response.json())
+      .then(res => {
+        console.log(res.data.categories)
+      })
   }
 }
 </script>
