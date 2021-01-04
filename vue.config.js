@@ -5,16 +5,16 @@ module.exports = {
     proxy: {
       '/x': {
         target: 'https://api.bilibili.com/',
-        onProxyReq(proxyReq) {
-          proxyReq.setHeader('origin','https://www.bilibili.com')
-          proxyReq.setHeader('referer','https://www.bilibili.com')
+        onProxyReq (proxyReq) {
+          proxyReq.setHeader('origin', 'https://www.bilibili.com')
+          proxyReq.setHeader('referer', 'https://www.bilibili.com')
         }
       },
       '/api': {
         target: 'https://www.imooc.com/',
         changeOrigin: true,
         pathRewrite: {
-          'api': ''
+          api: ''
         }
       }
     }
