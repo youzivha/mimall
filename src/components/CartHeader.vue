@@ -1,11 +1,12 @@
 <template>
   <div>
-    list
+    cartheader
   </div>
 </template>
 
 <script>
 export default {
+  name: 'cart-header'
 
 }
 </script>
