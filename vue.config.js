@@ -14,7 +14,7 @@ module.exports = {
         target: 'https://www.imooc.com/',
         changeOrigin: true,
         pathRewrite: {
-          api: ''
+          '/api': ''
         }
       }
     }
